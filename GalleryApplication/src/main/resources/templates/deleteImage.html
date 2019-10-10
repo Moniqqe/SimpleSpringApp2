@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>ALL IMAGES WITH DELETE</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<h2> ALL MY IMAGES: </h2>
+<div th:each = "allImages : ${allImages}">
+    <p th:text = "${allImages.name}"></p>
+    <p th:text = "${allImages.resolution}"></p>
+    <p th:text = "${allImages.size}"></p>
+    <p th:text = "${allImages.created}"></p>
+    <img th:src="@{'/assets/' +${allImages.name} }"/>
+    <button class=" btm submit" th:onclick="${'deleteFunction('+allImages.index+')'}">DELETE</button>
+    <hr/>
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    function deleteFunction(index){
+
+        console.log(index);
+
+
+        axios.delete('/gallery/picture/'+index)
+            .then( ({data}) => {
+
+                //let d2 = JSON.parse(data);
+
+            console.log(data.result);
+                   if(data.result) window.location.reload();
+            }).catch(err => {
+                console.log(err);
+            })
+    }
+</script>
+</body>
+</html>

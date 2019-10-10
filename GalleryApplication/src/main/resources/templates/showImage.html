@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>IMAGE</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<h1> CHOOSEN IMAGE: </h1>
+
+    <p th:text="${modelImage.name}"></p>
+
+    <p th:text="${modelImage.resolution}"></p>
+
+    <p th:text="${modelImage.size}"></p>
+
+    <p th:text="${modelImage.created}"></p>
+
+    <img th:src="@{'/assets/' +${modelImage.name} }"/>
+</body>
+</html>

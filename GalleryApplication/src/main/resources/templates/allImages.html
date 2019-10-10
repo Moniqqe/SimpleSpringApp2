@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>ALL IMAGES</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+    <div th:each = "allImages : ${allImages}">
+        <p th:text = "${allImages.name}"></p>
+        <p th:text = "${allImages.resolution}"></p>
+        <p th:text = "${allImages.size}"></p>
+        <p th:text = "${allImages.created}"></p>
+        <img th:src="@{'/assets/' +${allImages.name} }"/>
+        <hr/>
+    </div>
+</body>
+</html>

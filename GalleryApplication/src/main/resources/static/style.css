@@ -1,0 +1,29 @@
+h1{
+color: tomato;
+}
+p{
+color: DodgerBlue;
+}
+h2{
+color: tomato;
+text-align: center
+}
+
+.btn {
+     border: none;
+        background-color: inherit;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        display: inline-block;
+        border: 2px solid tomato;
+}
+
+.submit {
+    color: orange;
+}
+
+.submit:hover {
+    background: #ff9800;
+    color: white;
+}
